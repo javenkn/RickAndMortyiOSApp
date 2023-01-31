@@ -35,7 +35,11 @@ final class RMCharacterListView: UIView {
         collectionView.isHidden = true
         collectionView.alpha = 0
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(RMCharacterCollectionViewCell.self, forCellWithReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier)
+        collectionView.register(RMCharacterCollectionViewCell.self,
+                                forCellWithReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier)
+        collectionView.register(RMFooterLoadingCollectionReusableView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                withReuseIdentifier: RMFooterLoadingCollectionReusableView.identifier)
         return collectionView
     }()
     
@@ -46,7 +50,7 @@ final class RMCharacterListView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(collectionView, spinner)
         
-        addConstraint()
+        addConstraints()
         
         spinner.startAnimating()
         viewModel.delegate = self
@@ -58,7 +62,7 @@ final class RMCharacterListView: UIView {
         fatalError("Unsupported")
     }
     
-    private func addConstraint() {
+    private func addConstraints() {
         NSLayoutConstraint.activate([
             spinner.widthAnchor.constraint(equalToConstant: 100),
             spinner.heightAnchor.constraint(equalToConstant: 100),
