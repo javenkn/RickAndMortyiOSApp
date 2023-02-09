@@ -52,20 +52,20 @@ final class RMCharacterEpisodeCollectionViewCell: UICollectionViewCell {
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            seasonLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            seasonLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
-            seasonLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
-            seasonLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3),
+            seasonLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14),
+            seasonLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 14),
+            seasonLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -14),
+            seasonLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.25),
             
             nameLabel.topAnchor.constraint(equalTo: seasonLabel.bottomAnchor),
-            nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
-            nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
-            nameLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3),
+            nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 14),
+            nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -14),
+            nameLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.25),
             
             airDateLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            airDateLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
-            airDateLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
-            airDateLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3),
+            airDateLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 14),
+            airDateLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -14),
+            airDateLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.25),
         ])
     }
     
