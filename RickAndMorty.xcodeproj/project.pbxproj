@@ -37,6 +37,7 @@
 		8FBBCBC12998898C00E90A52 /* RMSettingsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBCBC02998898C00E90A52 /* RMSettingsViewViewModel.swift */; };
 		8FBBCBC3299889CF00E90A52 /* RMSettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBCBC2299889CF00E90A52 /* RMSettingsCellViewModel.swift */; };
 		8FBBCBC529988A7E00E90A52 /* RMSettingsOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBCBC429988A7E00E90A52 /* RMSettingsOption.swift */; };
+		8FBBCBC82998960100E90A52 /* RMSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBCBC72998960100E90A52 /* RMSettingsView.swift */; };
 		8FBC6FBA2987690C008C611A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBC6FB92987690C008C611A /* AppDelegate.swift */; };
 		8FBC6FBC2987690C008C611A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBC6FBB2987690C008C611A /* SceneDelegate.swift */; };
 		8FBC6FBE2987690C008C611A /* RMTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBC6FBD2987690C008C611A /* RMTabBarController.swift */; };
@@ -89,6 +90,7 @@
 		8FBBCBC02998898C00E90A52 /* RMSettingsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSettingsViewViewModel.swift; sourceTree = "<group>"; };
 		8FBBCBC2299889CF00E90A52 /* RMSettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSettingsCellViewModel.swift; sourceTree = "<group>"; };
 		8FBBCBC429988A7E00E90A52 /* RMSettingsOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSettingsOption.swift; sourceTree = "<group>"; };
+		8FBBCBC72998960100E90A52 /* RMSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSettingsView.swift; sourceTree = "<group>"; };
 		8FBC6FB62987690C008C611A /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBC6FB92987690C008C611A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FBC6FBB2987690C008C611A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		8FBBCBC6299895EE00E90A52 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				8FBBCBC72998960100E90A52 /* RMSettingsView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		8FBC6FAD2987690C008C611A = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +285,7 @@
 		8FBC6FCF29877474008C611A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8FBBCBC6299895EE00E90A52 /* SwiftUI */,
 				8FB11D382990CAA900D6E206 /* EpisodeDetails */,
 				8FB11D2F2990929600D6E206 /* Episode */,
 				8F4BC9A1298E10D800F5EA6D /* CharacterDetails */,
@@ -436,6 +447,7 @@
 				8FBC6FBA2987690C008C611A /* AppDelegate.swift in Sources */,
 				8F4BC9A5298E113100F5EA6D /* RMCharacterPhotoCollectionViewCell.swift in Sources */,
 				8FBBCBC3299889CF00E90A52 /* RMSettingsCellViewModel.swift in Sources */,
+				8FBBCBC82998960100E90A52 /* RMSettingsView.swift in Sources */,
 				8F4BC9B0298E11C300F5EA6D /* RMCharacterEpisodeCollectionViewCellViewModel.swift in Sources */,
 				8FBC6FBC2987690C008C611A /* SceneDelegate.swift in Sources */,
 				8F0473182988B9FE00B4A402 /* Extensions.swift in Sources */,
