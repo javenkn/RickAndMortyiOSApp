@@ -12,7 +12,7 @@ final class RMSearchView: UIView {
     
     // MARK: - Subviews
     
-    
+    private let noResultView = RMNoSearchResultsView()
     
     // MARK: - Init
     
@@ -21,10 +21,21 @@ final class RMSearchView: UIView {
         super.init(frame: frame)
         backgroundColor = .systemBackground
         translatesAutoresizingMaskIntoConstraints = false
+        addSubviews(noResultView)
+        addConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    private func addConstraints() {
+        NSLayoutConstraint.activate([
+            noResultView.widthAnchor.constraint(equalToConstant: 150),
+            noResultView.heightAnchor.constraint(equalToConstant: 150),
+            noResultView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            noResultView.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
     }
 }
 
