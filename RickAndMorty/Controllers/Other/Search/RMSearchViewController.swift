@@ -16,6 +16,17 @@ class RMSearchViewController: UIViewController {
             case episode // name
             case location // name | planet
             
+            var endpoint: RMEndpoint {
+                switch self {
+                case .character:
+                    return .character
+                case .episode:
+                    return .episode
+                case .location:
+                    return .location
+                }
+            }
+            
             var title: String {
                 switch self {
                 case .character:
@@ -72,7 +83,7 @@ class RMSearchViewController: UIViewController {
     
     @objc
     private func didTapExecuteSearch() {
-//        viewModel.executeSeach()
+        viewModel.executeSearch()
     }
     
     private func addConstraints() {
