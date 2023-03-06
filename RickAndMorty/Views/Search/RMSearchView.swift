@@ -20,6 +20,7 @@ final class RMSearchView: UIView {
     
     private let noResultView = RMNoSearchResultsView()
     private let searchInputView = RMSearchInputView()
+    private let resultsView = RMSearchResultsView()
     
     // MARK: - Init
     
@@ -28,23 +29,38 @@ final class RMSearchView: UIView {
         super.init(frame: frame)
         backgroundColor = .systemBackground
         translatesAutoresizingMaskIntoConstraints = false
-        addSubviews(noResultView, searchInputView)
+        addSubviews(resultsView, noResultView, searchInputView)
         addConstraints()
         
         searchInputView.configure(with: RMSearchInputViewViewModel(type: viewModel.config.filterType))
         searchInputView.delegate = self
         
-        viewModel.registerOptionChangeBlock { [weak self] tuple in
-            self?.searchInputView.update(option: tuple.0, value: tuple.1)
-        }
-        
-        viewModel.registerSearchResultHandler { results in
-            print(results)
-        }
+        setUpHandlers(viewModel: viewModel)
     }
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    private func setUpHandlers(viewModel: RMSearchViewViewModel) {
+        viewModel.registerOptionChangeBlock { [weak self] tuple in
+            self?.searchInputView.update(option: tuple.0, value: tuple.1)
+        }
+        
+        viewModel.registerSearchResultHandler { [weak self] results in
+            DispatchQueue.main.async {
+                self?.resultsView.configure(with: results)
+                self?.noResultView.isHidden = true
+                self?.resultsView.isHidden = false
+            }
+        }
+        
+        viewModel.registerNoResultsHandler { [weak self] in
+            DispatchQueue.main.async {
+                self?.noResultView.isHidden = false
+                self?.resultsView.isHidden = true
+            }
+        }
     }
     
     private func addConstraints() {
@@ -53,6 +69,11 @@ final class RMSearchView: UIView {
             searchInputView.leftAnchor.constraint(equalTo: leftAnchor),
             searchInputView.rightAnchor.constraint(equalTo: rightAnchor),
             searchInputView.heightAnchor.constraint(equalToConstant: viewModel.config.filterType == .episode ? 50 : 80),
+            
+            resultsView.topAnchor.constraint(equalTo: searchInputView.bottomAnchor),
+            resultsView.leftAnchor.constraint(equalTo: leftAnchor),
+            resultsView.rightAnchor.constraint(equalTo: rightAnchor),
+            resultsView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             noResultView.widthAnchor.constraint(equalToConstant: 150),
             noResultView.heightAnchor.constraint(equalToConstant: 150),
